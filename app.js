@@ -25,6 +25,10 @@ const fetchPrice = async(ctype)=>{
     const change = r.data.coin.priceChange1d;
     const marcap = r.data.coin.marketCap;
     const sup = r.data.coin.totalSupply;
+    var col = "green";
+    if(change<0){
+        col="red";
+    }
 
 
 
@@ -37,7 +41,7 @@ const fetchPrice = async(ctype)=>{
 <td>
    ${base}
 </td>
-<td>
+<td style="color:${col};">
     ${price} ${curr}
 </td>
 </tr>
@@ -59,7 +63,7 @@ const fetchPrice = async(ctype)=>{
 <td>
       Change
 </td>
-<td>
+<td style="color:${col};">
      ${change}
 </td>
 </tr>  <tr>
