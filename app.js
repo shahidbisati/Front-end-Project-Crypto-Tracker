@@ -25,6 +25,7 @@ const fetchPrice = async(ctype)=>{
     const change = r.data.coin.priceChange1d;
     const marcap = r.data.coin.marketCap;
     const sup = r.data.coin.totalSupply;
+    const web = r.data.coin.websiteUrl;
     var col = "green";
     if(change<0){
         col="red";
@@ -74,6 +75,14 @@ const fetchPrice = async(ctype)=>{
       ${sup}
 </td>
 </tr>
+<tr>
+<td>
+       Website
+</td>
+<td>
+       <a href="${web}">${web}</a>
+</td>
+</tr>  
 `
    update = setTimeout(()=>fetchPrice(ctype),10000);
 }
